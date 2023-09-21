@@ -1,6 +1,5 @@
 # Barbershop Frontend
 
-![Barbershop Screenshot](screenshot.png)
 
 ## Table of Contents
 
@@ -65,4 +64,13 @@ Contributions to improve the frontend are welcome! Please fork the repository, m
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+## Login
+
+![image](https://github.com/Ro6son/barbershop-frontend/assets/91978309/ec624d0f-ecce-4771-83ba-ba2830159797)
+
+## Register
+
+![image](https://github.com/Ro6son/barbershop-frontend/assets/91978309/a30b273d-a150-486b-9ec8-cae080b73deb)
+
 
