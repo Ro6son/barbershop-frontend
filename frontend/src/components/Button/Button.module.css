@@ -1,0 +1,36 @@
+.button {
+  width: 100%;
+  border: none;
+  padding: .9rem;
+  border-radius: 8px;
+  color: var(--white);
+  background-color: var(--secondary);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  /* Adiciona um efeito de transição de 0.3 segundos com função easing */
+}
+
+.button span {
+  font-size: 1rem;
+  transition: transform 0.3s ease; /* Aplica a mesma duração e função easing ao texto */
+}
+
+.button:hover {
+  background-color: var(--primary); /* Define a cor de fundo quando o botão é hover */
+  transform: scale(1.05); /* Aumenta a escala em 5% quando o botão é hover */
+}
+
+
+/* 
+format old
+.button {
+  width: 100%;
+  border: none;
+  padding: .9rem;
+  border-radius: 8px;
+  color: var(--white);
+  background-color: var(--secondary);
+}
+
+.button span {
+  font-size: 1rem;
+} */
