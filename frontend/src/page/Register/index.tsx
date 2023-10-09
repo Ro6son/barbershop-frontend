@@ -9,6 +9,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { BsPerson, BsKey } from 'react-icons/bs';
 import { AiOutlineMail } from 'react-icons/ai';
 import { api } from '../../server';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 // Interface para os valores do formulário de registro
 interface IFormValues {
@@ -40,18 +43,42 @@ export function Register() {
     formState: { errors },
   } = useForm<IFormValues>({ resolver: yupResolver(schema) });
 
-  // Função de submissão do formulário
+
+   // Função de submissão do formulário
   const submit = handleSubmit(async (data) => {
+    try {
+      // Faz uma requisição POST à API para cadastrar o usuário
+      const result = await api.post('/users', {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+      });
+  
+      // Exibe uma notificação de sucesso
+      toast.success('Cadastro realizado com sucesso!', {
+        position: 'top-right', // Posição da notificação
+        autoClose: 3000, // Duração em milissegundos
+      });
+  
+      console.log("🚀 ~ file: index.tsx:42 ~ submit ~ result:", result);
+    } catch (error) {
+      if (error instanceof Error) { // Verifica se 'error' é uma instância de 'Error'
 
-    // Faz uma requisição POST à API para cadastrar o usuário
-    const result = await api.post('/users', {
-      name: data.name,
-      email: data.email,
-      password: data.password,
-    });
-    console.log("🚀 ~ file: index.tsx:42 ~ submit ~ result:", result)
+        // Exibe uma notificação de erro com base na resposta da API
+        toast.error(error.message, {
+          position: 'top-right', // Posição da notificação
+          autoClose: 3000, // Duração em milissegundos
+        });
+      } else {
+        // Exibe uma notificação de erro genérica
+        toast.error('Ocorreu um erro ao processar sua solicitação. Tente novamente mais tarde.', {
+          position: 'top-right', // Posição da notificação
+          autoClose: 3000, // Duração em milissegundos
+        });
+      }
+    }
   });
-
+  
   // Renderização do componente de registro
   return (
     <div className={style.background}>

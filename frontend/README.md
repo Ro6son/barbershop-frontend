@@ -2,6 +2,7 @@
 
 ![Barbershop Screenshot](screenshot.png)
 
+
 ## Table of Contents
 
 - [Introduction](#introduction)
