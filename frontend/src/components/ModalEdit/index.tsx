@@ -101,7 +101,7 @@ export function ModalEdit({
           </div>
           <div className={style.footer}>
             <button onClick={handleChangeModal}>Cancelar</button>
-            <button onClick={updateData}>Editar</button>
+            <button onClick={updateData}>Salvar</button>
           </div>
         </div>
       </div>

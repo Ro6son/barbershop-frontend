@@ -141,7 +141,7 @@ export function Schedules() {
 
           <div className={style.footer}>
             <button>Cancelar</button>
-            <button>Editar</button>
+            <button>Salvar</button>
           </div>
         </form>
       </div>
